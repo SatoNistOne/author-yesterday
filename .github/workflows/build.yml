@@ -1,0 +1,38 @@
+name: build
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pyinstaller
+
+      - name: Build exe
+        run: pyinstaller --onefile --windowed --name AuthorYesterday --icon assets/icon.ico --add-data "assets;assets" app/main.py
+
+      - name: Smoke test
+        shell: pwsh
+        run: |
+          if (-not (Test-Path dist/AuthorYesterday.exe)) { exit 1 }
+          (Get-Item dist/AuthorYesterday.exe).Length / 1MB
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/AuthorYesterday.exe

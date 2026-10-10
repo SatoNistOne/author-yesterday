@@ -1,0 +1,324 @@
+QWidget {
+    color: $text;
+    font-family: "$sans";
+    font-size: 11pt;
+}
+QMainWindow, QDialog, QStackedWidget > QWidget, QScrollArea, QScrollArea > QWidget > QWidget {
+    background: $bg;
+}
+QToolTip {
+    background: $card;
+    color: $text;
+    border: 1px solid $border;
+    padding: 4px 8px;
+}
+#Sidebar {
+    background: $sidebar;
+    border-right: 1px solid $border;
+}
+#Logo {
+    font-family: "$serif";
+    font-size: 19pt;
+    font-weight: bold;
+    color: $accent;
+}
+#LogoSub {
+    color: $muted;
+    font-size: 9pt;
+}
+#NavButton {
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 12pt;
+}
+#NavButton:hover {
+    background: $hover;
+}
+QPushButton#SidebarToggle, QPushButton#ProfileButton {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 6px 8px;
+    border-radius: 9px;
+}
+QPushButton#SidebarToggle {
+    padding: 8px;
+}
+QPushButton#ProfileButton {
+    color: $text;
+}
+QPushButton#SidebarToggle:hover, QPushButton#ProfileButton:hover {
+    background: $hover;
+}
+#NavButton:checked {
+    background: $accent;
+    color: $accent_text;
+    font-weight: bold;
+}
+#UserBox {
+    color: $muted;
+}
+#PageTitle {
+    font-family: "$serif";
+    font-size: 22pt;
+    font-weight: bold;
+}
+#SectionTitle {
+    font-family: "$serif";
+    font-size: 15pt;
+    font-weight: bold;
+}
+#BookTitle {
+    font-family: "$serif";
+    font-size: 26pt;
+    font-weight: bold;
+}
+#Muted, #CardAuthor, #CardGenres {
+    color: $muted;
+}
+#CardTitle {
+    font-family: "$serif";
+    font-size: 12pt;
+    font-weight: bold;
+}
+#CardRating, #Stars {
+    color: $star;
+    font-weight: bold;
+}
+#Card, #Panel {
+    background: $card;
+    border: 1px solid $border;
+    border-radius: 14px;
+}
+#Card[hovered="true"] {
+    border: 1px solid $accent;
+}
+#Card QLabel, #Panel QLabel {
+    background: transparent;
+}
+#Chip {
+    background: $hover;
+    border-radius: 9px;
+    padding: 3px 10px;
+    font-size: 10pt;
+}
+#EmptyState {
+    color: $muted;
+    font-family: "$serif";
+    font-size: 16pt;
+}
+#Description {
+    font-family: "$serif";
+    font-size: 12pt;
+}
+QPushButton, QToolButton {
+    background: $card;
+    border: 1px solid $border;
+    border-radius: 9px;
+    padding: 7px 16px;
+}
+QPushButton:hover, QToolButton:hover {
+    border-color: $accent;
+    background: $hover;
+}
+QPushButton:disabled {
+    color: $muted;
+    background: $bg;
+}
+QPushButton[kind="primary"] {
+    background: $accent;
+    border-color: $accent;
+    color: $accent_text;
+    font-weight: bold;
+}
+QPushButton[kind="primary"]:hover {
+    background: $accent_hover;
+}
+QPushButton[kind="danger"] {
+    color: $danger;
+}
+QPushButton[kind="flat"] {
+    background: transparent;
+    border: none;
+    color: $accent;
+    padding: 4px 6px;
+}
+QToolButton::menu-indicator {
+    image: url("$arrow_icon");
+    width: 14px;
+    height: 14px;
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    right: 10px;
+}
+QToolButton[popupMode="1"], QToolButton[popupMode="2"] {
+    padding-right: 26px;
+}
+QLineEdit, QPlainTextEdit, QTextEdit, QComboBox, QSpinBox {
+    background: $input;
+    border: 1px solid $border;
+    border-radius: 9px;
+    padding: 7px 10px;
+    selection-background-color: $accent;
+    selection-color: $accent_text;
+}
+QLineEdit:focus, QPlainTextEdit:focus, QTextEdit:focus, QComboBox:focus {
+    border-color: $accent;
+}
+QComboBox {
+    padding-right: 30px;
+}
+QComboBox::drop-down {
+    border: none;
+    width: 28px;
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+}
+QComboBox::down-arrow {
+    image: url("$arrow_icon");
+    width: 14px;
+    height: 14px;
+}
+QComboBox::down-arrow:on {
+    top: 1px;
+}
+QComboBox QAbstractItemView, QMenu {
+    background: $card;
+    border: 1px solid $border;
+    selection-background-color: $accent;
+    selection-color: $accent_text;
+    padding: 4px;
+}
+QMenu::item {
+    padding: 6px 22px 6px 26px;
+    border-radius: 6px;
+}
+QMenu::item:selected {
+    background: $accent;
+    color: $accent_text;
+}
+QListWidget, QTableWidget {
+    background: $card;
+    border: 1px solid $border;
+    border-radius: 12px;
+    padding: 4px;
+    alternate-background-color: $bg;
+    gridline-color: $border;
+}
+QListWidget::item {
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+QListWidget::item:hover {
+    background: $hover;
+}
+QListWidget::item:selected, QTableWidget::item:selected {
+    background: $accent;
+    color: $accent_text;
+}
+QHeaderView::section {
+    background: $sidebar;
+    border: none;
+    border-bottom: 1px solid $border;
+    padding: 8px;
+    font-weight: bold;
+}
+QTabWidget::pane {
+    border: none;
+}
+QTabBar::tab {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 18px;
+    color: $muted;
+    font-size: 12pt;
+}
+QTabBar::tab:selected {
+    color: $text;
+    border-bottom: 2px solid $accent;
+    font-weight: bold;
+}
+QTabBar::tab:hover {
+    color: $text;
+}
+QCheckBox::indicator, QListWidget::indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid $muted;
+    border-radius: 4px;
+    background: $input;
+}
+QCheckBox::indicator:checked, QListWidget::indicator:checked {
+    background: $accent;
+    border-color: $accent;
+    image: url("$check_icon");
+}
+QRadioButton {
+    spacing: 8px;
+    padding: 2px 4px;
+}
+QRadioButton::indicator {
+    width: 14px;
+    height: 14px;
+    border: 1px solid $muted;
+    border-radius: 7px;
+    background: $input;
+}
+QRadioButton::indicator:checked {
+    background: $accent;
+    border: 1px solid $accent;
+}
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 2px;
+}
+QScrollBar::handle:vertical {
+    background: $border;
+    border-radius: 4px;
+    min-height: 40px;
+}
+QScrollBar::handle:vertical:hover {
+    background: $muted;
+}
+QScrollBar::add-line, QScrollBar::sub-line {
+    height: 0;
+    width: 0;
+}
+QScrollBar:horizontal {
+    height: 0;
+}
+QProgressBar {
+    background: $hover;
+    border: none;
+    border-radius: 4px;
+    min-height: 8px;
+    max-height: 8px;
+}
+QProgressBar::chunk {
+    background: $accent;
+    border-radius: 4px;
+}
+#ReaderText {
+    background: $card;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+#ReaderBar {
+    background: $sidebar;
+    border-bottom: 1px solid $border;
+}
+#AuthTitle {
+    font-family: "$serif";
+    font-size: 24pt;
+    font-weight: bold;
+    color: $accent;
+}
+#ErrorText {
+    color: $danger;
+}
